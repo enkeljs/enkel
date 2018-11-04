@@ -4,7 +4,7 @@
     <main>
       <div class="left-side">
         <span class="title">
-          Welcome to Enkel!
+          Welcome to Enkel2!
         </span>
         <system-information></system-information>
       </div>
