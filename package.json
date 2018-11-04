@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "enkel",
+    "productName": "Enkel",
     "appId": "com.dei2.enkel",
     "directories": {
       "output": "build"

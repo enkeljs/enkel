@@ -1,6 +1,6 @@
 'use strict'
 
-import { app, BrowserWindow } from 'electron'
+import { app, BrowserWindow, Notification, globalShortcut } from 'electron'
 
 /**
  * Set `__static` path to static files in production
@@ -9,6 +9,10 @@ import { app, BrowserWindow } from 'electron'
 if (process.env.NODE_ENV !== 'development') {
   global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
 }
+
+// const EVENTS = {
+//   NOTIFICATE: 'notificate'
+// }
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -20,15 +24,50 @@ function createWindow () {
    * Initial window options
    */
   mainWindow = new BrowserWindow({
-    height: 563,
+    height: 600,
     useContentSize: true,
-    width: 1000
+    width: 800,
+    minWidth: 800,
+    minHeight: 600,
+    frame: false,
+    // transparent: true,
+    movable: true,
+    titleBarStyle: 'hidden',
+    skipTaskbar: true
   })
 
   mainWindow.loadURL(winURL)
 
   mainWindow.on('closed', () => {
     mainWindow = null
+  })
+
+  mainWindow.webContents.on('devtools-closed', (event) => {
+    let _notificate = new Notification({
+      title: '提示',
+      body: mainWindow.webContents.getTitle() + ', ' + mainWindow.webContents.getURL()
+    })
+    _notificate.show()
+  })
+
+  mainWindow.webContents.on('devtools-opened', (event) => {
+    let _notificate = new Notification({
+      title: '提示',
+      body: app.getName()
+    })
+    _notificate.show()
+    // mainWindow.webContents.on('before-input-event', (event, input) => {
+    //   console.log('....', event, input)
+    //   event.preventDefault()
+    // })
+  })
+
+  globalShortcut.register('CommandOrControl+shift+N', () => {
+    let _notificate = new Notification({
+      title: '提示',
+      body: '全局快捷键'
+    })
+    _notificate.show()
   })
 }
 
