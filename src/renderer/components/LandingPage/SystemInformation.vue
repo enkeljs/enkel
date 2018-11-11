@@ -34,7 +34,7 @@
   export default {
     data () {
       return {
-        electron: process.versions.electron,
+        electron: process.versions['atom-shell'],
         name: this.$route.name,
         node: process.versions.node,
         path: this.$route.path,

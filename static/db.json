@@ -1,0 +1,62 @@
+{
+  "user": [
+    {
+      "username": "ls",
+      "phonenum": "18000000000",
+      "email": "",
+      "nickname": "前端开荒牛",
+      "headIcon": "https://static.dei2.com/plugins_admin/img/upload_dacaabf0a8bd16a5d24bc2feb7f0dbdc.png",
+      "lastLoginTime": "1526206993577",
+      "lastLoginIp": "",
+      "birthday": "1515680799656",
+      "gender": 1,
+      "website": "",
+      "status": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoibHMifSwiaWF0IjoxNTI2MjE5Njg1LCJleHAiOjE1MjY4MjQ0ODV9.vyA1SA9JbAGD1z5yvIuNqmORHFZkOHY7TTLqVa6pzgA",
+      "plugins": "",
+      "role": 3,
+      "createdAt": "2018-01-11T14:26:42.000Z",
+      "updatedAt": "2018-05-13T10:23:13.000Z",
+      "robot": {
+        "nickname": "",
+        "headIcon": "",
+        "token": "",
+        "id": 3,
+        "username": "robot_2021065685",
+        "uuid": "d-9f0634fd-c505-c209-df12-615e612e6582",
+        "password": "868471",
+        "updatedAt": "2018-05-13T13:54:45.228Z",
+        "createdAt": "2018-05-13T13:54:45.228Z"
+      }
+    }
+  ],
+  "currentUser": {
+    "username": "ls",
+    "phonenum": "18000000000",
+    "email": "",
+    "nickname": "前端开荒牛",
+    "headIcon": "https://static.dei2.com/plugins_admin/img/upload_dacaabf0a8bd16a5d24bc2feb7f0dbdc.png",
+    "lastLoginTime": "1526206993577",
+    "lastLoginIp": "",
+    "birthday": "1515680799656",
+    "gender": 1,
+    "website": "",
+    "status": 1,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7InVzZXJuYW1lIjoibHMifSwiaWF0IjoxNTI2MjE5Njg1LCJleHAiOjE1MjY4MjQ0ODV9.vyA1SA9JbAGD1z5yvIuNqmORHFZkOHY7TTLqVa6pzgA",
+    "plugins": "",
+    "role": 3,
+    "createdAt": "2018-01-11T14:26:42.000Z",
+    "updatedAt": "2018-05-13T10:23:13.000Z",
+    "robot": {
+      "nickname": "",
+      "headIcon": "",
+      "token": "",
+      "id": 3,
+      "username": "robot_2021065685",
+      "uuid": "d-9f0634fd-c505-c209-df12-615e612e6582",
+      "password": "868471",
+      "updatedAt": "2018-05-13T13:54:45.228Z",
+      "createdAt": "2018-05-13T13:54:45.228Z"
+    }
+  }
+}

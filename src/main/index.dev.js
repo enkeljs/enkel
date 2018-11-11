@@ -7,8 +7,11 @@
 
 /* eslint-disable */
 
+// Set environment for development
+process.env.NODE_ENV = 'development'
+
 // Install `electron-debug` with `devtron`
-require('electron-debug')({ showDevTools: true })
+// require('electron-debug')({ showDevTools: true })
 
 // Install `vue-devtools`
 require('electron').app.on('ready', () => {
