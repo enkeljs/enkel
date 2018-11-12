@@ -1,6 +1,6 @@
 {
-  "name": "experience",
-  "version": "0.0.0",
+  "name": "enkel",
+  "version": "0.0.1",
   "author": "liangshan <loveliangshan@126.com>",
   "description": "记录我的日常心得",
   "license": null,
@@ -22,7 +22,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "experience",
+    "productName": "enkel",
     "appId": "org.simulatedgreg.electron-vue",
     "directories": {
       "output": "build"
@@ -59,6 +59,7 @@
     "axios": "^0.16.1",
     "better-scroll": "^1.10.3",
     "fingerprintjs2": "^1.8.0",
+    "gsap": "^2.0.2",
     "jsonwebtoken": "^8.2.1",
     "lowdb": "^1.0.0",
     "macaddress": "^0.2.8",

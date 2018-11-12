@@ -8,12 +8,16 @@ export default new Router({
   routes: [
     {
       path: '/login',
-      component: () => import('../components/pages/Login')
+      components: {
+        HomeRouter: () => import('../components/pages/Login')
+      }
     },
     {
       path: '/',
-      name: 'landing-page',
-      component: () => import('../components/Home')
+      name: 'home',
+      components: {
+        HomeRouter: () => import('../components/Home')
+      }
     },
     {
       path: '*',

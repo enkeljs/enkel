@@ -29,16 +29,22 @@ if (_deviceFileExists) {
   } else {
     // id字段不存在，或者id的值为空
     DEVICE_ID = utils.getUUID('d-')
-    fs.writeFileSync(_deviceFilePath, JSON.stringify({
-      id: DEVICE_ID
-    }))
+    fs.writeFileSync(
+      _deviceFilePath,
+      JSON.stringify({
+        id: DEVICE_ID
+      })
+    )
   }
 } else {
   // _device文件不存在
   DEVICE_ID = utils.getUUID('d-')
-  fs.writeFileSync(_deviceFilePath, JSON.stringify({
-    id: DEVICE_ID
-  }))
+  fs.writeFileSync(
+    _deviceFilePath,
+    JSON.stringify({
+      id: DEVICE_ID
+    })
+  )
 }
 
 // const deviceAdapter = new FileSync('./_device')
@@ -59,13 +65,16 @@ const secret = 'com.dei2'
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
  */
 if (process.env.NODE_ENV !== 'development') {
-  global.__static = require('path').join(__dirname, '/static').replace(/\\/g, '\\\\')
+  global.__static = require('path')
+    .join(__dirname, '/static')
+    .replace(/\\/g, '\\\\')
 }
 
 let mainWindow
-const winURL = process.env.NODE_ENV === 'development'
-  ? `http://localhost:9080`
-  : `file://${__dirname}/index.html`
+const winURL =
+  process.env.NODE_ENV === 'development'
+    ? `http://localhost:9080`
+    : `file://${__dirname}/index.html`
 let checkLogin = false
 let loginWindow
 global.currentUser = {}
@@ -110,15 +119,18 @@ function createWindow () {
   /**
    * Initial window options
    */
-  mainWindow = new BrowserWindow(({
+  mainWindow = new BrowserWindow({
     width: 850,
     height: 700,
     useContentSize: true,
     show: false,
+    frame: false,
+    titleBarStyle: 'hiddenInset',
+    transparent: true,
     webPreferences: {
       devTools: true
     }
-  }))
+  })
 
   mainWindow.loadURL(winURL)
 
@@ -126,11 +138,12 @@ function createWindow () {
   //   mainWindow = null
   // })
 
-  createLoginWindow()
-
   global.currentUser = db.get('currentUser').value()
   if (global.currentUser && global.currentUser.username) {
-    let _loginToken = db.get('user').find({ username: global.currentUser.username }).value().token
+    let _loginToken = db
+      .get('user')
+      .find({ username: global.currentUser.username })
+      .value().token
     if (_loginToken) {
       let _status = jwt.verify(_loginToken, secret, (err, decoded) => {
         return err || {}
@@ -149,6 +162,7 @@ function createWindow () {
   if (checkLogin) {
     mainWindow.show()
   } else {
+    createLoginWindow()
     loginWindow.show()
   }
 
@@ -261,7 +275,8 @@ ipcMain.on('login', async res => {
       cacheLoginStatus = true
       // 缓存登录的用户信息
       let _loginInfo = loginData.data.data
-      let _oldUser = db.get('user')
+      let _oldUser = db
+        .get('user')
         .find({
           username: _loginInfo.username
         })
